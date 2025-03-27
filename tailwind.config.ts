@@ -8,9 +8,13 @@ export default {
   ],
   theme: {
     extend: {
+      fontFamily: {
+        geistSans: "var(--font-geist-sans)", // Use the CSS variable
+      },
       colors: {
         background: "var(--background)",
         foreground: "var(--foreground)",
+        navigation: "var(--navigation)"
       },
     },
   },
