@@ -14,7 +14,8 @@ export default {
       colors: {
         background: "var(--background)",
         foreground: "var(--foreground)",
-        navigation: "var(--navigation)"
+        navigation: "var(--navigation)",
+        navigationSecondary: "var(--navigationSecondary)"
       },
     },
   },

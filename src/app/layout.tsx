@@ -2,13 +2,13 @@
 
 import type { Metadata } from "next";
 import { useState } from "react";
-import { Noto_Sans } from "next/font/google";
+import { Outfit } from "next/font/google";
 import "./globals.css";
 
 import Sidebar from "../components/sidebar";
 import Header from "../components/header/header";
 
-const geistSans = Noto_Sans({
+const geistSans = Outfit({
   variable: "--font-geist-sans",
   subsets: ["latin"],
 });
@@ -31,18 +31,14 @@ export default function RootLayout({
       <body className={geistSans.variable}>
         <div className="flex h-screen font-geistSans">
           <Sidebar sidebarOpen={sidebarOpen} setSidebarOpen={setSidebarOpen}/>
-
           {/* Main Content */}
-          <main className="flex-1 p-6 bg-background overflow-y-auto ml-0 md:ml-80">
+          <main className="flex-1 p-6 bg-background overflow-y-auto ml-0 md:mt-20">
             <Header sidebarOpen={sidebarOpen} setSidebarOpen={setSidebarOpen}/>
-            
             <div className="container p-4">
               {children}
             </div>
-            
           </main>
         </div>
-        
       </body>
     </html>
   );
