@@ -1,6 +1,5 @@
 "use client";
 
-import type { Metadata } from "next";
 import { useState } from "react";
 import { Outfit } from "next/font/google";
 import "./globals.css";
@@ -28,13 +27,20 @@ export default function RootLayout({
 
   return (
     <html lang="en">
+      <head>
+        <title>Daniel Hall - Software Solutions Architect</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="description" content="Daniel Hall - Software Solutions Architect" />
+        <meta name="keywords" content="Daniel Hall, Software Solutions Architect, Full Stack Developer, .NET Developer, Next.js, React, TypeScript, JavaScript, Azure, BigCommerce, Storyblok" />
+        <meta name="author" content="Daniel Hall" />
+      </head>
       <body className={geistSans.variable}>
         <div className="flex h-screen font-geistSans">
           <Sidebar sidebarOpen={sidebarOpen} setSidebarOpen={setSidebarOpen}/>
           {/* Main Content */}
-          <main className="flex-1 p-6 bg-background overflow-y-auto ml-0 md:mt-20">
+          <main className="flex-1 p-6 bg-background overflow-y-auto ml-0 md:mt-4">
             <Header sidebarOpen={sidebarOpen} setSidebarOpen={setSidebarOpen}/>
-            <div className="container p-4">
+            <div className="container pt-2 px-4">
               {children}
             </div>
           </main>

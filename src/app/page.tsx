@@ -1,19 +1,30 @@
-import Link from "next/link";
-import { type SanityDocument } from "next-sanity";
+//import Link from "next/link";
+//import { type SanityDocument } from "next-sanity";
 
-import { client } from "@/sanity/client";
+//import { client } from "@/sanity/client";
 
-const POSTS_QUERY = `*[
+/* const POSTS_QUERY = `*[
   _type == "post"
   && defined(slug.current)
-]|order(publishedAt desc)[0...12]{_id, title, slug, publishedAt}`;
+]|order(publishedAt desc)[0...12]{_id, title, slug, publishedAt}`; */
 
-const options = { next: { revalidate: 30 } };
+//const options = { next: { revalidate: 30 } };
 
 export default async function IndexPage() {
-  const posts = await client.fetch<SanityDocument[]>(POSTS_QUERY, {}, options);
+  //const posts = await client.fetch<SanityDocument[]>(POSTS_QUERY, {}, options);
 
   return (
+    <>
+      <h1 className="text-4xl font-bold mb-8">Welome</h1>
+      <p><strong>This website is currently under development.</strong></p>
+      <p>Please check back again soon!</p>
+      <p className="mt-5">I don&apos;t usually share things before they&apos;re finished — but that often means I never get around to sharing them at all.</p>
+      <p>In a moment of motivation, I decided to publish my unfinished personal website.</p>
+      <p>Sometimes, you&apos;ve just got to bite the bullet and put something out there to create the momentum to finish it.</p>
+    </>
+  )
+
+  /* return (
     <>
       <h1 className="text-4xl font-bold mb-8">Posts</h1>
       <ul className="flex flex-col gap-y-4">
@@ -27,5 +38,5 @@ export default async function IndexPage() {
         ))}
       </ul>
     </>
-  );
+  ); */
 }

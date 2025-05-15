@@ -1,6 +1,7 @@
 "use client";
 
-import { TbLayoutSidebarLeftCollapse, TbBrandLinkedin, TbBrandX, TbHome, TbChevronRight } from "react-icons/tb";
+import { TbLayoutSidebarLeftCollapse, TbBrandLinkedin, TbBrandX } from "react-icons/tb";
+import Link from "next/link";
 
 interface SidebarProps {
     sidebarOpen: boolean;
@@ -27,27 +28,27 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }: SidebarProps) => {
             <nav className="px-4 py-4">
                 <ul className="list-none space-y-1 divide-y divide-solid divide-navigationSecondary m-0">
                     <li>
-                        <a href="#" className="block py-2 px-4 rounded hover:bg-background transition-bg duration-200">
+                        <Link href="/" className="block py-2 px-4 mt-1 rounded hover:bg-background transition-bg duration-200">
                             <span className="">Home</span>
-                        </a>
+                        </Link>
                     </li>
                     <li>
-                        <a href="#" className="block py-2 px-4 mt-1 rounded hover:bg-background transition-bg duration-200">
+                        <Link href="/" className="block py-2 px-4 mt-1 rounded hover:bg-background transition-bg duration-200">
                             <span className="">Articles</span>
-                        </a>
+                        </Link>
                     </li>
                     <li>
-                        <a href="#" className="block py-2 px-4 mt-1 rounded hover:bg-background transition-bg duration-200">
+                        <Link href="/experience" className="block py-2 px-4 mt-1 rounded hover:bg-background transition-bg duration-200">
                             <span className="">Experience</span>
-                        </a>
+                        </Link>
                     </li>
                 </ul>
             </nav>
             <div className="flex items-top px-8 space-x-2">
-                <a className="inline-block flex items-top mt-4">
+                <a target="_blank" href="https://www.linkedin.com/in/daniel-hall-89736678/" className="inline-block flex items-top mt-4">
                     <TbBrandLinkedin className="w-8 h-8 bg-background p-2 rounded" />
                 </a>
-                <a className="inline-block flex items-top mt-4">
+                <a target="_blank" href="https://x.com/daniel__jh" className="inline-block flex items-top mt-4">
                     <TbBrandX className="w-8 h-8 bg-background p-2 rounded" />
                 </a>
             </div>
