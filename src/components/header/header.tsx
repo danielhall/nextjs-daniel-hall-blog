@@ -15,7 +15,7 @@ const Header = ({ sidebarOpen, setSidebarOpen }: SidebarProps) => {
                 <a onClick={() => setSidebarOpen(true)} className="inline-block flex items-top mt-4">
                     <TbLayoutSidebarLeftExpand className="w-8 h-8 bg-navigation p-2 rounded" />
                 </a>
-                <a className="p-2 m-2 rounded inline-block">
+                <a onClick={() => setSidebarOpen(true)} className="p-2 m-2 rounded inline-block">
                     <span className="text-2xl font-bold block">Daniel Hall</span>
                     <span className="text-sm font-italic block">Software Solutions Architect</span>
                 </a>

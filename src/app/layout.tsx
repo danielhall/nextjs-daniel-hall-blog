@@ -38,7 +38,7 @@ export default function RootLayout({
         <div className="flex h-screen font-geistSans">
           <Sidebar sidebarOpen={sidebarOpen} setSidebarOpen={setSidebarOpen}/>
           {/* Main Content */}
-          <main className="flex-1 p-6 bg-background overflow-y-auto ml-0 md:mt-4">
+          <main className="flex-1 p-6 bg-background overflow-y-auto ml-0 md:mt-4 mb-8">
             <Header sidebarOpen={sidebarOpen} setSidebarOpen={setSidebarOpen}/>
             <div className="container pt-2 px-4">
               {children}
