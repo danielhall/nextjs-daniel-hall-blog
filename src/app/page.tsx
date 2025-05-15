@@ -15,7 +15,7 @@ export default async function IndexPage() {
 
   return (
     <>
-      <h1 className="text-4xl font-bold mb-8">Welome</h1>
+      <h1 className="text-4xl font-bold mb-8">Welcome</h1>
       <p><strong>This website is currently under development.</strong></p>
       <p>Please check back again soon!</p>
       <p className="mt-5">I don&apos;t usually share things before they&apos;re finished — but that often means I never get around to sharing them at all.</p>
