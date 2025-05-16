@@ -1,7 +1,7 @@
 'use client';
 
 import { motion, useAnimationControls } from 'framer-motion';
-import { useEffect, useRef, useState } from 'react';
+import { useEffect } from 'react';
 import { usePathname } from 'next/navigation';
 import Image from "next/image";
 
@@ -11,59 +11,48 @@ import DanielPic from '../../../public/assets/Daniel.jpeg';
 
 const Introduction = () => {
   const controls = useAnimationControls();
-  const animationRef = useRef<ReturnType<typeof setInterval> | null>(null);
-  const [isMounted, setIsMounted] = useState(false); 
   const pathName = usePathname();
 
   useEffect(() => {
-    setIsMounted(true);
+  let cancelled = false;
 
-    const startAnimation = () => {
-      const animation = async () => {
-        try {
-          while (pathName === '/') { // Check isMounted within the loop
-            if (controls 
-              && typeof controls.start === 'function'
-              && pathName === '/') { 
-              await controls.start({
-                x: 2, 
-                y: -1, 
-                rotate: 1, 
-                transition: { duration: 0.5 }, 
-              });
-              await controls.start({
-                x: -2, 
-                y: 1, 
-                rotate: -4, 
-                transition: { duration: 0.5 }, 
-              });
-            }
-          }
-        }
-        catch {
+  const startAnimation = async () => {
+    return;
+    
+    while (!cancelled && pathName === '/') {
+      try {
+        await controls.start({
+          x: 2,
+          y: -1,
+          rotate: 1,
+          transition: { duration: 0.5 },
+        });
+        if (cancelled) break;
 
-        }
-        
-      };
-
-      animation();
+        await controls.start({
+          x: -2,
+          y: 1,
+          rotate: -4,
+          transition: { duration: 0.5 },
+        });
+      } catch {
+        break; // If animation throws, exit loop
+      }
+    }
     };
 
-    // Delay the animation start by a small amount (e.g., 100ms)
-    setTimeout(() => {
-      if (controls && typeof controls.start === 'function') { 
+    const timer = setTimeout(() => {
+        if (!cancelled) {
         startAnimation();
-      }
-    }, 100); 
+        }
+    }, 100);
 
     return () => {
-      setIsMounted(false); 
-      if (animationRef.current) {
-        clearInterval(animationRef.current);
-      }
-      controls.stop(); 
+        cancelled = true;
+        clearTimeout(timer);
+        controls.stop();
     };
-  }, [controls, isMounted, pathName]);
+    }, [controls, pathName]);
 
   return (
     <>

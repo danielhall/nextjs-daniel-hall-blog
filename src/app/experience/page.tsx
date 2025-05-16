@@ -14,7 +14,7 @@ export default async function IndexPage() {
   //const posts = await client.fetch<SanityDocument[]>(POSTS_QUERY, {}, options);
 
   return (
-    <div className="md:ml-5 prose">
+    <div className="md:ml-5 md:mt-1 lg:mt-6 prose">
       <h1 className="text-4xl font-bold mb-8">Experience</h1>
       <p>An experienced, proactive Full Stack .NET Developer and Solutions Architect with over 13 years of experience designing robust, maintainable web solutions. Trusted as a technical lead across high-profile projects, I specialise in architecting scalable enterprise-grade systems, both traditional and headless. I have deep .NET expertise across the full stack, including complex integration work, service-oriented architecture, and performance-critical backend systems. Passionate about performance, code quality, and innovation, with extensive experience in Next.js, React, Storyblok, BigCommerce, and Azure.</p>
       
