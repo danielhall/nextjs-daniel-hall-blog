@@ -1,6 +1,8 @@
 //import Link from "next/link";
 //import { type SanityDocument } from "next-sanity";
 
+import Introduction from "@/components/introduction"
+
 //import { client } from "@/sanity/client";
 
 /* const POSTS_QUERY = `*[
@@ -15,12 +17,15 @@ export default async function IndexPage() {
 
   return (
     <>
-      <h1 className="text-4xl font-bold mb-8">Welcome</h1>
-      <p><strong>This website is currently under development.</strong></p>
-      <p>Please check back again soon!</p>
-      <p className="mt-5">I don&apos;t usually share things before they&apos;re finished — but that often means I never get around to sharing them at all.</p>
-      <p>In a moment of motivation, I decided to publish my unfinished personal website.</p>
-      <p>Sometimes, you&apos;ve just got to bite the bullet and put something out there to create the momentum to finish it.</p>
+      <Introduction />
+      <div className="md:ml-5 prose">
+        <h1 className="text-4xl font-bold mt-5 sm:mt-0 mb-8">Welcome</h1>
+        <p><strong>This website is currently under development.</strong></p>
+        <p>Please check back again soon!</p>
+        <p className="mt-5">I don&apos;t usually share things before they&apos;re finished — but that often means I never get around to sharing them at all.</p>
+        <p>In a moment of motivation, I decided to publish my unfinished personal website.</p>
+        <p>Sometimes, you&apos;ve just got to bite the bullet and put something out there to create the momentum to finish it.</p>
+      </div>
     </>
   )
 
