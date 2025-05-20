@@ -1,9 +1,10 @@
-//import Link from "next/link";
-//import { type SanityDocument } from "next-sanity";
+import Introduction from "@/components/introduction";
+import { generateMetadata } from "@/utils/metadata";
 
-import Introduction from "@/components/introduction"
-
-//import { client } from "@/sanity/client";
+export const metadata = generateMetadata({
+    title: "Daniel Hall | Solutions Architect & Full Stack Developer",
+    description: "Personal website of Daniel Hall, a Solutions Architect specialising in .NET, Next.js, and enterprise-scale systems."
+});
 
 /* const POSTS_QUERY = `*[
   _type == "post"

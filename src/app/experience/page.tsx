@@ -1,6 +1,11 @@
-'use client';
-
 import SkillCard from '@/components/skills/SkillCard';
+import { generateMetadata } from "@/utils/metadata";
+
+export const metadata = generateMetadata({
+    title: "Experience | Solutions Architect & Full Stack Developer",
+    description: "Over 13 years of experience in .NET development, cloud architecture, and technical leadership. View my professional journey, key skills, and achievements.",
+    path: "/experience"
+});
 
 //import Link from "next/link";
 //import { type SanityDocument } from "next-sanity";
