@@ -1,3 +1,7 @@
+'use client';
+
+import SkillCard from '@/components/skills/SkillCard';
+
 //import Link from "next/link";
 //import { type SanityDocument } from "next-sanity";
 
@@ -10,7 +14,7 @@
 
 //const options = { next: { revalidate: 30 } };
 
-export default async function IndexPage() {
+export default function IndexPage() {
   //const posts = await client.fetch<SanityDocument[]>(POSTS_QUERY, {}, options);
 
   return (
@@ -20,46 +24,68 @@ export default async function IndexPage() {
       
       <h2 className="text-3xl font-bold mt-8 mb-4">Key Skills</h2>
 
-      <h3 className="text-2xl mb-4">Core Technologies</h3>
+      <div className="flex flex-wrap gap-4">
 
-      <ul className="list-disc list-outside pl-6">
-        <li>C#, .NET (Framework & Core), ASP.NET MVC, Web API, WCF</li>
-        <li>Extensive backend experience with microservices, middleware, identity providers, and distributed architectures</li>
-        <li>Typescript, JavaScript, React, Next.js, Vue.js, Node.js</li>
-        <li>Azure (App Services, SQL, Functions, CDN, Front Door, Service Bus, WAF, Entra ID)</li>
-        <li>SQL Server, Entity Framework (incl. Core)</li>
-      </ul>
+        <SkillCard title="Solutions Architecture">
+          <ul className="list-disc list-outside pl-6">
+            <li>Enterprise-scale distributed systems design</li>
+            <li>Microservices with Domain Driven Design</li>
+            <li>Event-driven architecture (Azure Service Bus, RabbitMQ)</li>
+            <li>High-performance system optimisation</li>
+            <li>Technical discovery and stakeholder workshops</li>
+          </ul>
+        </SkillCard>
 
-      <h3 className="text-2xl mb-4 mt-4">Architecture & DevOps</h3>
+        <SkillCard title="Modern Web Development">
+          <ul className="list-disc list-outside pl-6">
+            <li>Next.js 13/14 App Router and Server Components</li>
+            <li>React 18+ with TypeScript and custom hooks</li>
+            <li>Performance optimisation and Core Web Vitals</li>
+            <li>Headless commerce with BigCommerce Catalyst</li>
+            <li>Storyblok CMS and composable architecture</li>
+          </ul>
+        </SkillCard>
 
-      <ul className="list-disc list-outside pl-6">
-        <li>Scalable distributed systems, Microservices, Domain Driven Design, Mediatr</li>
-        <li>CI/CD: Azure DevOps, Octopus, TeamCity, Bicep</li>
-        <li>Git (Azure DevOps, Bitbucket, GitHub), TFS</li>
-      </ul>
+        <SkillCard title=".NET Expertise">
+          <ul className="list-disc list-outside pl-6">
+            <li>C#, .NET Framework & .NET Core/6+</li>
+            <li>ASP.NET Core Web API and MVC</li>
+            <li>Identity providers and SSO solutions</li>
+            <li>Entity Framework Core and SQL optimisation</li>
+            <li>Azure cloud-native development</li>
+          </ul>
+        </SkillCard>
 
-      <h3 className="text-2xl mb-4 mt-4">Headless Commerce & CMS</h3>
+        <SkillCard title="Cloud & DevOps">
+          <ul className="list-disc list-outside pl-6">
+            <li>Azure (App Services, Functions, SQL, Front Door)</li>
+            <li>CI/CD with Azure DevOps and Octopus Deploy</li>
+            <li>Infrastructure as Code (Bicep, ARM)</li>
+            <li>Application monitoring and insights</li>
+            <li>Git workflows and branch strategies</li>
+          </ul>
+        </SkillCard>
 
-      <ul className="list-disc list-outside pl-6">
-        <li>BigCommerce (including Catalyst), Storyblok, Kentico (11-13, Xperience)</li>
-        <li>GraphQL, REST APIs, webhook integrations</li>
-      </ul>
+        <SkillCard title="Quality & Testing">
+          <ul className="list-disc list-outside pl-6">
+            <li>Test-driven development with XUnit/NUnit</li>
+            <li>Integration testing with SpecFlow</li>
+            <li>Performance testing and optimisation</li>
+            <li>Code quality and best practices</li>
+            <li>Technical mentoring and code reviews</li>
+          </ul>
+        </SkillCard>
 
-      <h3 className="text-2xl mb-4 mt-4">Quality & Testing</h3>
-
-      <ul className="list-disc list-outside pl-6">
-        <li>Unit testing: XUnit, NUnit, Moq, SpecFlow</li>
-        <li>Dependency Injection: Autofac, Unity</li>
-      </ul>
-
-      <h3 className="text-2xl mb-4 mt-4">Other</h3>
-
-      <ul className="list-disc list-outside pl-6">
-        <li>Agile (Scrum/Kanban), JIRA, Confluence, Scoro</li>
-        <li>GTM, GA4, Clarity, GSC configuration</li>
-        <li>Fixed-price and agile estimation, technical interviewing, team mentoring</li>
-        <li>Internal DevOps tooling: automated laptop provisioning and system setup</li>
-      </ul>
+        <SkillCard title="Professional Skills">
+          <ul className="list-disc list-outside pl-6">
+            <li>Technical leadership and team mentoring</li>
+            <li>Agile methodologies (Scrum/Kanban)</li>
+            <li>Project estimation and planning</li>
+            <li>Client workshops and requirements gathering</li>
+            <li>Technical documentation and knowledge sharing</li>
+          </ul>
+        </SkillCard>
+      </div>
 
       <h2 className="text-3xl font-bold mt-8 mb-4">Professional Experience</h2>
 
