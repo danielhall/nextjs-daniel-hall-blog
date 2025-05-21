@@ -58,12 +58,12 @@ const Introduction = () => {
     <>
      <motion.div 
       layoutId={`introduction`}
-      className="grid grid-cols-12 mb-6">
+      className="grid grid-cols-12 mb-6 md:mb-4 bg-navigation rounded-2xl shadow-lg p-5">
       <motion.div 
         initial={{ opacity: 0.6 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 0.2 }}
-        className="col-span-4 sm:col-span-5 md:pt-1 xl:col-span-2 lg:pt-10 lg:p-5">
+        className="col-span-4 sm:col-span-5 md:pt-1 xl:col-span-2 lg:p-5">
         <div className="relative">
           <Image
             src={DanielPic.src}
@@ -83,7 +83,7 @@ const Introduction = () => {
         </div>
       </motion.div>
       <motion.div 
-        className="col-span-8 sm:col-span-7 xl:col-span-10 lg:pt-4 xl:pt-6 pl-6">
+        className="col-span-8 sm:col-span-7 xl:col-span-10 pl-6">
         <h1 className="text-2xl font-bold mb-6 lg:mt-5">Hi, I&apos;m Daniel!</h1>
         <p>Full stack dev, Solutions Architect, and proud builder of things that work (and some things that just make my life easier).</p>
         <p className="hidden md:block">From high-traffic e-commerce to home server wizardry, I love solving problems with code - and maybe over-engineering a few for fun.</p>

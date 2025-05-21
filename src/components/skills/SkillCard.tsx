@@ -19,7 +19,7 @@ export default function SkillCard({ title, children }: SkillCardProps) {
         <div className="w-full md:w-[calc(50%-0.5rem)] lg:w-[calc(33.33%-0.67rem)] mb-4">
             <div 
                 className={`
-                    bg-navigation dark:bg-navigation
+                    bg-navigation
                     rounded-2xl overflow-hidden
                     transition-all duration-500 ease-out
                     hover:shadow-lg hover:scale-[1.02]

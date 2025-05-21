@@ -10,7 +10,7 @@ import { TbLayoutSidebarLeftExpand } from "react-icons/tb";
 const Header = ({ sidebarOpen, setSidebarOpen }: SidebarProps) => { 
     return (
         <>
-            <div className={`flex items-top p-2 md:hidden mb-6 transition-opacity  
+            <div className={`flex items-top px-6 md:px-2 p-2 md:hidden mb-2 transition-opacity  
                     ${sidebarOpen ? "opacity-10 duration-100" : "opacity-100 duration-700"}`}>
                 <a onClick={() => setSidebarOpen(true)} className="inline-block flex items-top mt-4">
                     <TbLayoutSidebarLeftExpand className="w-8 h-8 bg-navigation p-2 rounded" />
