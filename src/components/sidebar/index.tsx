@@ -83,6 +83,9 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }: SidebarProps) => {
             <TbBrandX className="w-8 h-8 bg-background p-2 rounded" />
           </a>
         </div>
+        <div className="mt-auto px-8 py-4 text-sm text-foreground/30">
+          © {new Date().getFullYear()} Daniel Hall
+        </div>
       </aside>
     </>
   );
