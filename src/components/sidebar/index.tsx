@@ -6,6 +6,7 @@ import {
   TbBrandX,
 } from "react-icons/tb";
 import Link from "next/link";
+import { TechStackModal } from "@/components/stack-modal";
 
 interface SidebarProps {
   sidebarOpen: boolean;
@@ -83,8 +84,9 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }: SidebarProps) => {
             <TbBrandX className="w-8 h-8 bg-background p-2 rounded" />
           </a>
         </div>
-        <div className="mt-auto px-8 py-4 text-sm text-foreground/30">
-          © {new Date().getFullYear()} Daniel Hall
+        <div className="mt-auto px-8 py-4 text-sm flex items-center space-x-2">
+          <span className="text-foreground/30">© {new Date().getFullYear()} Daniel Hall</span>
+          <TechStackModal setSidebarOpen={setSidebarOpen} />
         </div>
       </aside>
     </>
