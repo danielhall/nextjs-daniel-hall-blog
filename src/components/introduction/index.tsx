@@ -58,7 +58,7 @@ const Introduction = () => {
     <>
      <motion.div 
       layoutId={`introduction`}
-      className="grid grid-cols-12 mb-6 md:mb-4 bg-navigation rounded-2xl shadow-lg p-5">
+      className="grid grid-cols-12 mb-6 mt-2 md:mb-4 bg-navigation rounded-2xl shadow-lg p-5">
       <motion.div 
         initial={{ opacity: 0.6 }}
         animate={{ opacity: 1 }}
