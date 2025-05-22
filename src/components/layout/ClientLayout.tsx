@@ -18,17 +18,16 @@ export default function ClientLayout({
   const [sidebarOpen, setSidebarOpen] = useState(false);
 
   return (
-    <div className={`${geistSans.variable} flex h-screen font-geistSans`}>
+    <div className={`${geistSans.variable} flex h-screen font-geistSans overflow-hidden`}>
       <Sidebar sidebarOpen={sidebarOpen} setSidebarOpen={setSidebarOpen}/>
       {/* Main Content */}
-      <main className="flex-1 bg-background overflow-y-auto">
-        <div className="px-3 md:px-6 pt-6 sm:pt-10 lg:pt-3 pb-12">
+      <main className="relative flex-1 bg-background overflow-y-auto">
+        <div className="px-6 pt-6 sm:pt-10 lg:pt-3 pb-12">
           <Header sidebarOpen={sidebarOpen} setSidebarOpen={setSidebarOpen}/>
-          <div className="container pt-2 md:pt-3 lg:pt-6 px-4 md:pl-5">
+          <div className="container pt-2 px-4">
             {children}
           </div>
         </div>
-
       </main>
     </div>
   );
