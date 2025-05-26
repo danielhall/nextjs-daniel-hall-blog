@@ -2,7 +2,7 @@ import { notFound } from "next/navigation";
 import { type SanityDocument } from "next-sanity";
 import { client } from "@/sanity/client";
 import Prose from '@/components/prose';
-import ArticleContent from '@/components/articles/ArticleContent';
+import ArticleContent from '@/components/articleContent';
 export { generateMetadata } from './meta';
 
 interface PageProps {

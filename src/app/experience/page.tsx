@@ -1,4 +1,4 @@
-import SkillCard from '@/components/skills/SkillCard';
+import SkillCard from '@/components/skills';
 import Prose from '@/components/prose';
 import { generateMetadata } from "@/utils/metadata";
 

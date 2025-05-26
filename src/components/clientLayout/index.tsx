@@ -3,7 +3,7 @@
 import { useState } from "react";
 import { Outfit } from "next/font/google";
 import Sidebar from "@/components/sidebar";
-import Header from "@/components/header/header";
+import Header from "@/components/header";
 
 const geistSans = Outfit({
   variable: "--font-geist-sans",

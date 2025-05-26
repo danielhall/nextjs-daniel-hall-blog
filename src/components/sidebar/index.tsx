@@ -59,22 +59,22 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }: SidebarProps) => {
               </Link>
             </li>
             <li>
-              <Link href="/experience">
-                <span
-                  onClick={handleNavClick}
-                  className="block py-2 px-4 mt-1 rounded hover:bg-background transition-bg duration-200"
-                >
-                  Experience
-                </span>
-              </Link>
-            </li>
-            <li>
               <Link href="/articles">
                 <span
                   onClick={handleNavClick}
                   className="block py-2 px-4 mt-1 rounded hover:bg-background transition-bg duration-200"
                 >
                   Articles
+                </span>
+              </Link>
+            </li>
+            <li>
+              <Link href="/experience">
+                <span
+                  onClick={handleNavClick}
+                  className="block py-2 px-4 mt-1 rounded hover:bg-background transition-bg duration-200"
+                >
+                  Experience
                 </span>
               </Link>
             </li>

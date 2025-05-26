@@ -3,7 +3,7 @@ import { type SanityDocument } from "next-sanity";
 import { client } from "@/sanity/client";
 import { generateMetadata } from "@/utils/metadata";
 import Prose from '@/components/prose';
-import ArticleCard from '@/components/articles/ArticleCard';
+import ArticleCard from '@/components/articleCard';
 
 export const metadata = generateMetadata({
   title: "Articles | Daniel Hall",
