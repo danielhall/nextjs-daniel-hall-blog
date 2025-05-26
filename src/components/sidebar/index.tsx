@@ -68,6 +68,16 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }: SidebarProps) => {
                 </span>
               </Link>
             </li>
+            <li>
+              <Link href="/articles">
+                <span
+                  onClick={handleNavClick}
+                  className="block py-2 px-4 mt-1 rounded hover:bg-background transition-bg duration-200"
+                >
+                  Articles
+                </span>
+              </Link>
+            </li>
           </ul>
         </nav>
         <div className="flex items-top px-8 space-x-2">
