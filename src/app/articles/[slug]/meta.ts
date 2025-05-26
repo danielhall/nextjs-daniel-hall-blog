@@ -51,7 +51,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     .slice(0, 200) + '...';
 
   return generateBaseMetadata({
-    title: `${post.title} | Daniel Hall`,
+    title: `${post.title}`,
     description: firstParagraph,
     path: `/articles/${params.slug}`
   });

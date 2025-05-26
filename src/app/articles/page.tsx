@@ -57,7 +57,6 @@ export default async function ArticlesPage({ searchParams }: PageProps) {
 
   return (
     <Prose header="Articles">
-      <div className="max-w-2xl">
         <div className="space-y-8">
           {posts.length === 0 ? (
             <p className="text-foreground/60">No articles found.</p>
@@ -91,7 +90,6 @@ export default async function ArticlesPage({ searchParams }: PageProps) {
             )}
           </div>
         )}
-      </div>
     </Prose>
   );
 }

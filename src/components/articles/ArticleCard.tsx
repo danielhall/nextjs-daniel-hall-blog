@@ -1,40 +1,35 @@
 'use client';
 
 import Link from 'next/link';
-import { motion } from 'framer-motion';
 import { type SanityDocument } from "next-sanity";
 import type { SanityBlock } from '@/app/articles/page';
 
 export default function ArticleCard({ post }: { post: SanityDocument }) {
   return (
-    <motion.article 
-      layout
-      initial={{ opacity: 0, y: 20 }}
-      animate={{ opacity: 1, y: 0 }}
-      exit={{ opacity: 0, y: -20 }}
-      className="group bg-navigation rounded-2xl overflow-hidden shadow-sm"
+    <article 
+      className="group bg-navigation rounded-2xl overflow-hidden transition-all duration-500 ease-out hover:shadow-lg active:scale-[0.99] origin-top shadow-sm"
     >
-      <Link href={`/articles/${post.slug.current}`} className="block p-6">
-        <motion.h2 
-          layout="position"
-          className="text-2xl font-semibold group-hover:text-foreground/90 transition-colors"
+      <Link 
+        href={`/articles/${post.slug.current}`} 
+        className="block p-6"
+      >
+        <h2 
+          className="text-2xl font-medium text-left group-hover:text-foreground/80 transition-colors duration-200"
         >
           {post.title}
-        </motion.h2>
-        <motion.time 
-          layout="position"
-          className="text-sm text-foreground/60 mt-2 inline-block"
+        </h2>
+        <time 
+          className="text-sm text-foreground/60 mt-2 inline-block transition-colors duration-200 group-hover:text-foreground/70"
         >
           {new Date(post.publishedAt).toLocaleDateString('en-GB', {
             day: 'numeric',
             month: 'long',
             year: 'numeric'
           })}
-        </motion.time>
+        </time>
         {post.body && (
-          <motion.p 
-            layout="position"
-            className="mt-4 text-foreground/70 leading-relaxed"
+          <p 
+            className="mt-4 text-foreground/70 leading-relaxed transition-colors duration-200 group-hover:text-foreground/80"
           >
             {post.body
               .filter((block: SanityBlock) => block._type === 'block')
@@ -47,9 +42,9 @@ export default function ArticleCard({ post }: { post: SanityDocument }) {
               .join(' ')
               .slice(0, 200)}
             {post.body.length > 0 && '...'}
-          </motion.p>
+          </p>
         )}
       </Link>
-    </motion.article>
+    </article>
   );
 }
