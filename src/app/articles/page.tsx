@@ -3,6 +3,7 @@ import { type SanityDocument } from "next-sanity";
 import { client } from "@/sanity/client";
 import { generateMetadata } from "@/utils/metadata";
 import Prose from '@/components/prose';
+import ArticleCard from '@/components/articles/ArticleCard';
 
 export const metadata = generateMetadata({
   title: "Articles | Daniel Hall",
@@ -37,7 +38,7 @@ const POSTS_QUERY = `*[
 
 const TOTAL_POSTS_QUERY = `count(*[_type == "post" && defined(slug.current)])`;
 
-interface SanityBlock {
+export interface SanityBlock {
   _type: string;
   children: Array<{ text: string }>;
 }
@@ -62,35 +63,7 @@ export default async function ArticlesPage({ searchParams }: PageProps) {
             <p className="text-foreground/60">No articles found.</p>
           ) : (
             posts.map((post) => (
-              <article key={post._id} className="group">
-                <Link href={`/articles/${post.slug.current}`}>
-                  <h2 className="text-2xl font-semibold group-hover:text-foreground/80 transition-colors">
-                    {post.title}
-                  </h2>
-                  <time className="text-sm text-foreground/60">
-                    {new Date(post.publishedAt).toLocaleDateString('en-GB', {
-                      day: 'numeric',
-                      month: 'long',
-                      year: 'numeric'
-                    })}
-                  </time>
-                  {post.body && (
-                    <p className="mt-2 text-foreground/80">
-                      {post.body
-                        .filter((block: SanityBlock) => block._type === 'block')
-                        .slice(0, 1)
-                        .map((block: SanityBlock) => 
-                          block.children
-                            .map(child => child.text)
-                            .join('')
-                        )
-                        .join(' ')
-                        .slice(0, 200)}
-                      {post.body.length > 0 && '...'}
-                    </p>
-                  )}
-                </Link>
-              </article>
+              <ArticleCard key={post._id} post={post} />
             ))
           )}
         </div>

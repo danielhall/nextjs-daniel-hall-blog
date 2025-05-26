@@ -1,12 +1,9 @@
 import { notFound } from "next/navigation";
-import Image from "next/image";
-import { PortableText } from "@portabletext/react";
-import type { PortableTextComponents } from '@portabletext/react';
 import { type SanityDocument } from "next-sanity";
-import { type Metadata } from "next";
 import { client } from "@/sanity/client";
-import { generateMetadata as generateBaseMetadata } from "@/utils/metadata";
 import Prose from '@/components/prose';
+import ArticleContent from '@/components/articles/ArticleContent';
+export { generateMetadata } from './meta';
 
 interface PageProps {
   params: {
@@ -31,38 +28,6 @@ const POST_QUERY = `*[_type == "post" && slug.current == $slug][0]{
   }
 }`;
 
-interface SanityBlock {
-  _type: string;
-  children: Array<{ text: string }>;
-}
-
-export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
-  const post = await client.fetch<SanityDocument>(POST_QUERY, {
-    slug: params.slug,
-  });
-
-  if (!post) {
-    return {};
-  }
-
-  const firstParagraph = post.body
-    ?.filter((block: SanityBlock) => block._type === 'block')
-    .slice(0, 1)
-    .map((block: SanityBlock) => 
-      block.children
-        .map(child => child.text)
-        .join('')
-    )
-    .join(' ')
-    .slice(0, 200) + '...';
-
-  return generateBaseMetadata({
-    title: `${post.title} | Daniel Hall`,
-    description: firstParagraph,
-    path: `/articles/${params.slug}`
-  });
-}
-
 export default async function ArticlePage({ params }: PageProps) {
   const post = await client.fetch<SanityDocument>(POST_QUERY, {
     slug: params.slug,
@@ -72,50 +37,9 @@ export default async function ArticlePage({ params }: PageProps) {
     notFound();
   }
 
-  const components: PortableTextComponents = {
-    block: {
-      normal: ({ children }) => <p className="mb-6 leading-relaxed">{children}</p>,
-      h2: ({ children }) => <h2 className="text-2xl font-semibold mt-12 mb-6">{children}</h2>,
-      h3: ({ children }) => <h3 className="text-xl font-semibold mt-8 mb-4">{children}</h3>,
-    },
-    list: {
-      bullet: ({ children }) => <ul className="mb-6 space-y-2">{children}</ul>,
-      number: ({ children }) => <ol className="list-decimal mb-6 ml-6 space-y-2">{children}</ol>,
-    },
-    listItem: {
-      bullet: ({ children }) => <li className="ml-6 list-disc">{children}</li>,
-    },
-  };
-
   return (
     <Prose header={post.title}>
-      <div className="max-w-2xl">
-        <time className="text-sm text-foreground/60 block mb-8">
-          {new Date(post.publishedAt).toLocaleDateString('en-GB', {
-            day: 'numeric',
-            month: 'long',
-            year: 'numeric'
-          })}
-        </time>
-
-        {post.image && (
-          <div className="relative w-full aspect-[2/1] mb-8">
-            <Image
-              src={post.image.url}
-              alt={post.title}
-              fill
-              className="object-cover rounded-lg"
-            />
-          </div>
-        )}
-
-        <div className="portable-text prose-headings:font-semibold prose-h2:text-2xl prose-h2:mt-12 prose-h2:mb-6 prose-h3:text-xl prose-h3:mt-8 prose-h3:mb-4 prose-p:mb-6 prose-p:leading-relaxed prose-ul:mb-6 prose-ul:space-y-2 prose-li:ml-6 prose-li:list-disc">
-          <PortableText
-            value={post.body}
-            components={components}
-          />
-        </div>
-      </div>
+      <ArticleContent post={post} />
     </Prose>
   );
 }
