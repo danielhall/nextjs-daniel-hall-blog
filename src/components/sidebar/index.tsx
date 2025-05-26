@@ -4,6 +4,8 @@ import {
   TbLayoutSidebarLeftCollapse,
   TbBrandLinkedin,
   TbBrandX,
+  TbBrandGithub,
+  TbBrandBluesky
 } from "react-icons/tb";
 import Link from "next/link";
 import { TechStackModal } from "@/components/stack-modal";
@@ -70,18 +72,32 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }: SidebarProps) => {
         </nav>
         <div className="flex items-top px-8 space-x-2">
           <a
-            target="_blank"
-            href="https://www.linkedin.com/in/daniel-hall-89736678/"
-            className="inline-block flex items-top mt-4"
-          >
+              target="_blank"
+              href="https://www.linkedin.com/in/daniel-hall-89736678/"
+              className="inline-block flex items-top mt-4"
+            >
             <TbBrandLinkedin className="w-8 h-8 bg-background p-2 rounded" />
           </a>
           <a
-            target="_blank"
-            href="https://x.com/daniel__jh"
-            className="inline-block flex items-top mt-4"
-          >
+              target="_blank"
+              href="https://x.com/daniel__jh"
+              className="inline-block flex items-top mt-4"
+            >
             <TbBrandX className="w-8 h-8 bg-background p-2 rounded" />
+          </a>
+          <a
+              target="_blank"
+              href="https://bsky.app/profile/danieljohnh.bsky.social"
+              className="inline-block flex items-top mt-4"
+            >
+            <TbBrandBluesky className="w-8 h-8 bg-background p-2 rounded" />
+          </a>
+          <a
+              target="_blank"
+              href="https://github.com/danielhall"
+              className="inline-block flex items-top mt-4"
+            >
+            <TbBrandGithub className="w-8 h-8 bg-background p-2 rounded" />
           </a>
         </div>
         <div className="mt-auto px-8 py-4 text-sm flex items-center space-x-2">
