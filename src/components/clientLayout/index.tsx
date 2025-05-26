@@ -4,6 +4,7 @@ import { useState } from "react";
 import { Outfit } from "next/font/google";
 import Sidebar from "@/components/sidebar";
 import Header from "@/components/header";
+import Breadcrumb from "@/components/breadcrumb";
 
 const geistSans = Outfit({
   variable: "--font-geist-sans",
@@ -29,6 +30,7 @@ export default function ClientLayout({
         <div className="px-6 pt-8 sm:pt-10 lg:pt-3 pb-12">
           <Header sidebarOpen={sidebarOpen} setSidebarOpen={setSidebarOpen}/>
           <div className="container pt-2 md:pt-3 lg:pt-6 px-2">
+            <Breadcrumb />
             {children}
           </div>
         </div>
