@@ -5,6 +5,7 @@ import { type SanityDocument } from "next-sanity";
 import { type Metadata } from "next";
 import { client } from "@/sanity/client";
 import { generateMetadata as generateBaseMetadata } from "@/utils/metadata";
+import Prose from '@/components/prose';
 
 interface PageProps {
   params: {
@@ -71,9 +72,7 @@ export default async function ArticlePage({ params }: PageProps) {
   }
 
   return (
-    <article className="prose max-w-none">
-      <h1 className="text-4xl font-bold mb-4">{post.title}</h1>
-      
+    <Prose header={post.title}>
       <time className="text-sm text-foreground/60 block mb-8">
         {new Date(post.publishedAt).toLocaleDateString('en-GB', {
           day: 'numeric',
@@ -105,6 +104,6 @@ export default async function ArticlePage({ params }: PageProps) {
           }}
         />
       </div>
-    </article>
+    </Prose>
   );
 }
