@@ -8,6 +8,7 @@ import {
   TbBrandBluesky
 } from "react-icons/tb";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { TechStackModal } from "@/components/stack-modal";
 
 interface SidebarProps {
@@ -16,6 +17,8 @@ interface SidebarProps {
 }
 
 const Sidebar = ({ sidebarOpen, setSidebarOpen }: SidebarProps) => {
+  const pathname = usePathname();
+
   const handleNavClick = () => {
     if (typeof window !== "undefined" && window.innerWidth < 768) {
       setSidebarOpen(false);
@@ -52,7 +55,9 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }: SidebarProps) => {
               <Link href="/">
                 <span
                   onClick={handleNavClick}
-                  className="block py-2 px-4 mt-1 rounded hover:bg-background transition-bg duration-200"
+                  className={`block py-2 px-4 mt-1 rounded transition-colors duration-200 ${
+                    pathname === "/" ? "bg-background" : "hover:bg-background"
+                  }`}
                 >
                   Home
                 </span>
@@ -62,7 +67,9 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }: SidebarProps) => {
               <Link href="/articles">
                 <span
                   onClick={handleNavClick}
-                  className="block py-2 px-4 mt-1 rounded hover:bg-background transition-bg duration-200"
+                  className={`block py-2 px-4 mt-1 rounded transition-colors duration-200 ${
+                    pathname.startsWith("/articles") ? "bg-background" : "hover:bg-background"
+                  }`}
                 >
                   Articles
                 </span>
@@ -72,7 +79,9 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }: SidebarProps) => {
               <Link href="/experience">
                 <span
                   onClick={handleNavClick}
-                  className="block py-2 px-4 mt-1 rounded hover:bg-background transition-bg duration-200"
+                  className={`block py-2 px-4 mt-1 rounded transition-colors duration-200 ${
+                    pathname === "/experience" ? "bg-background" : "hover:bg-background"
+                  }`}
                 >
                   Experience
                 </span>
@@ -82,36 +91,38 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }: SidebarProps) => {
         </nav>
         <div className="flex items-top px-8 space-x-2">
           <a
-              target="_blank"
-              href="https://www.linkedin.com/in/daniel-hall-89736678/"
-              className="inline-block flex items-top mt-4"
-            >
+            target="_blank"
+            href="https://www.linkedin.com/in/daniel-hall-89736678/"
+            className="inline-block flex items-top mt-4"
+          >
             <TbBrandLinkedin className="w-8 h-8 bg-background p-2 rounded" />
           </a>
           <a
-              target="_blank"
-              href="https://x.com/daniel__jh"
-              className="inline-block flex items-top mt-4"
-            >
+            target="_blank"
+            href="https://x.com/daniel__jh"
+            className="inline-block flex items-top mt-4"
+          >
             <TbBrandX className="w-8 h-8 bg-background p-2 rounded" />
           </a>
           <a
-              target="_blank"
-              href="https://bsky.app/profile/danieljohnh.bsky.social"
-              className="inline-block flex items-top mt-4"
-            >
+            target="_blank"
+            href="https://bsky.app/profile/danieljohnh.bsky.social"
+            className="inline-block flex items-top mt-4"
+          >
             <TbBrandBluesky className="w-8 h-8 bg-background p-2 rounded" />
           </a>
           <a
-              target="_blank"
-              href="https://github.com/danielhall"
-              className="inline-block flex items-top mt-4"
-            >
+            target="_blank"
+            href="https://github.com/danielhall"
+            className="inline-block flex items-top mt-4"
+          >
             <TbBrandGithub className="w-8 h-8 bg-background p-2 rounded" />
           </a>
         </div>
         <div className="mt-auto px-8 py-4 text-sm flex items-center space-x-2">
-          <span className="text-foreground/30">© {new Date().getFullYear()} Daniel Hall</span>
+          <span className="text-foreground/30">
+            © {new Date().getFullYear()} Daniel Hall
+          </span>
           <TechStackModal setSidebarOpen={setSidebarOpen} />
         </div>
       </aside>
