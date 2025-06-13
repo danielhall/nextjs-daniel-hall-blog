@@ -32,7 +32,7 @@ export default function Breadcrumb() {
         <li>
           <Link 
             href="/" 
-            className="text-foreground/20 hover:text-foreground transition-all duration-200 hover:scale-110"
+            className="text-foreground transition-all duration-200 hover:underline"
           >
             Home
           </Link>
@@ -45,7 +45,7 @@ export default function Breadcrumb() {
             ) : (
               <Link 
                 href={path}
-                className="text-foreground/20 hover:text-foreground transition-all duration-200 hover:scale-110"
+                className="text-foreground transition-all duration-200 hover:underline"
               >
                 {label}
               </Link>

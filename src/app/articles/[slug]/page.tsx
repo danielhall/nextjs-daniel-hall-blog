@@ -17,6 +17,7 @@ const POST_QUERY = `*[_type == "post" && slug.current == $slug][0]{
   slug,
   publishedAt,
   image,
+  "estimatedReadingTime": round(length(pt::text(body)) / 5 / 180 ),
   body[]{
     ...,
     _type == 'block' => {
@@ -38,8 +39,12 @@ export default async function ArticlePage({ params }: PageProps) {
   }
 
   return (
-    <Prose header={post.title}>
-      <ArticleContent post={post} />
-    </Prose>
+        <section className="prose p-2 md:pt-[100px] md:mx-auto md:max-w-3xl">
+            <h1 className="text-4xl font-bold sm:mt-0 mb-8">
+                {post.title}
+            </h1>
+            <ArticleContent post={post} />
+        </section>
+    
   );
 }
