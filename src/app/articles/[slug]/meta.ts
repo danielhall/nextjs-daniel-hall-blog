@@ -24,15 +24,16 @@ const POST_QUERY = `*[_type == "post" && slug.current == $slug][0]{
   }
 }`;
 
-interface PageProps {
-  params: {
-    slug: string;
-  };
+interface Props {
+  params: { slug: string };
+  searchParams: { [key: string]: string | string[] | undefined };
 }
 
-export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
+export async function generateMetadata(
+  props: Props
+): Promise<Metadata> {
   const post = await client.fetch<SanityDocument>(POST_QUERY, {
-    slug: params.slug,
+    slug: props.params.slug,
   });
 
   if (!post) {
@@ -53,6 +54,6 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   return generateBaseMetadata({
     title: `${post.title}`,
     description: firstParagraph,
-    path: `/articles/${params.slug}`
+    path: `/articles/${props.params.slug}`
   });
 }

@@ -14,7 +14,7 @@ export const metadata = generateMetadata({
 const POSTS_PER_PAGE = 10;
 
 interface PageProps {
-  searchParams: { [key: string]: string | string[] | undefined }
+  searchParams: Promise<{ [key: string]: string | string[] | undefined }>
 }
 
 const POSTS_QUERY = `*[
@@ -44,7 +44,7 @@ export interface SanityBlock {
 }
 
 export default async function ArticlesPage({ searchParams }: PageProps) {
-  const page = Number(searchParams.page) || 1;
+  const page = Number((await searchParams).page) || 1;
   const start = (page - 1) * POSTS_PER_PAGE;
   const end = start + POSTS_PER_PAGE;
 
