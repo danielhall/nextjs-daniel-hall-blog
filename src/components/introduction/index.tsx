@@ -85,14 +85,15 @@ const Introduction = () => {
       <motion.div 
         className="col-span-8 sm:col-span-7 xl:col-span-10 pl-6">
         <h1 className="text-2xl font-bold mb-6 lg:mt-5">Hi, I&apos;m Daniel!</h1>
-        <p>Full stack dev, Solutions Architect, and proud builder of things that work (and some things that just make my life easier).</p>
-        <p className="hidden md:block">From high-traffic e-commerce to home server wizardry, I love solving problems with code - and maybe over-engineering a few for fun.</p>
-        <p className="hidden md:block md:mt-4">Welcome to my little corner of the internet.</p>
+        <p>With more than a decade of hands-on experience, I&apos;ve helped household brands build fast, scalable digital platforms.&nbsp;
+          <span className="hidden md:inline">I specialise in clean architecture, thoughtful integration, and guiding technical decisions that balance long-term maintainability with real-world delivery.</span>
+        </p>
+        <p className="hidden md:block md:mt-4">This is my digital notebook — a space for sharing lessons learned, tools I&apos;ve built, and the ideas I&apos;m exploring next.</p>
       </motion.div>
       <motion.div 
         className="col-span-12 md:hidden mt-4">
-        <p>From high-traffic e-commerce to home server wizardry, I love solving problems with code - and maybe over-engineering a few for fun.</p>
-        <p className="mt-4">Welcome to my little corner of the internet.</p>
+        <p>I specialise in clean architecture, thoughtful integration, and guiding technical decisions that balance long-term maintainability with real-world delivery.</p>
+        <p className="mt-4">This is my digital notebook — a space for sharing lessons learned, tools I&apos;ve built, and the ideas I&apos;m exploring next.</p>
       </motion.div>
     </motion.div>
     </>
