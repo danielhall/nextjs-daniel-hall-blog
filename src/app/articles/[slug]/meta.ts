@@ -28,7 +28,6 @@ const POST_QUERY = `*[_type == "post" && slug.current == $slug][0]{
 
 interface Props {
   params: Promise<{ slug: string }>;
-  searchParams: { [key: string]: string | string[] | undefined };
 }
 
 export async function generateMetadata(
