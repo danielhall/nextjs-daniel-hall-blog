@@ -13,6 +13,8 @@ const POST_QUERY = `*[_type == "post" && slug.current == $slug][0]{
   title,
   slug,
   publishedAt,
+  _updatedAt,
+  image,
   body[]{
     ...,
     _type == 'block' => {
@@ -25,7 +27,7 @@ const POST_QUERY = `*[_type == "post" && slug.current == $slug][0]{
 }`;
 
 interface Props {
-  params: { slug: string };
+  params: Promise<{ slug: string }>;
   searchParams: { [key: string]: string | string[] | undefined };
 }
 
@@ -33,7 +35,7 @@ export async function generateMetadata(
   props: Props
 ): Promise<Metadata> {
   const post = await client.fetch<SanityDocument>(POST_QUERY, {
-    slug: props.params.slug,
+    slug: (await props.params).slug,
   });
 
   if (!post) {
@@ -51,9 +53,21 @@ export async function generateMetadata(
     .join(' ')
     .slice(0, 200) + '...';
 
-  return generateBaseMetadata({
+  const baseMetadata = generateBaseMetadata({
     title: `${post.title}`,
     description: firstParagraph,
-    path: `/articles/${props.params.slug}`
+    path: `/articles/${(await props.params).slug}`
   });
+
+  return {
+    ...baseMetadata,
+    authors: [{ name: "Daniel Hall", url: "https://danieljh.uk" }],
+    openGraph: {
+      ...baseMetadata.openGraph,
+      type: 'article',
+      publishedTime: post.publishedAt,
+      modifiedTime: post._updatedAt || post.publishedAt,
+      authors: ['Daniel Hall'],
+    }
+  };
 }
