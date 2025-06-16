@@ -15,7 +15,7 @@ const POSTS_PER_PAGE = 9;
 const MIN_GRID_ITEMS = 3; // Minimum number of items to show in grid
 
 interface PageProps {
-  searchParams: { [key: string]: string | string[] | undefined }
+  searchParams: Promise<{ [key: string]: string | string[] | undefined }>
 }
 
 const POSTS_QUERY = `*[
@@ -45,7 +45,7 @@ export interface SanityBlock {
 }
 
 export default async function ArticlesPage({ searchParams }: PageProps) {
-  const page = Number(searchParams.page) || 1;
+  const page = Number((await searchParams).page) || 1;
   const start = (page - 1) * POSTS_PER_PAGE;
   const end = start + POSTS_PER_PAGE;
 
