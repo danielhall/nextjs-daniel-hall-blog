@@ -45,7 +45,7 @@ const Introduction = () => {
           </motion.div> 
         </motion.div>
         <div
-          className='bg-white block absolute top-0 right-0 h-[100%] w-[250px]'
+          className='block absolute top-0 right-0 h-[100%] w-[250px]'
           style={{
             backgroundImage: `url(${Amsterdam.src})`,
             backgroundPosition: 'right center',
