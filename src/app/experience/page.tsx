@@ -8,25 +8,11 @@ export const metadata = generateMetadata({
     path: "/experience"
 });
 
-//import Link from "next/link";
-//import { type SanityDocument } from "next-sanity";
-
-//import { client } from "@/sanity/client";
-
-/* const POSTS_QUERY = `*[
-  _type == "post"
-  && defined(slug.current)
-]|order(publishedAt desc)[0...12]{_id, title, slug, publishedAt}`; */
-
-//const options = { next: { revalidate: 30 } };
-
 export default function IndexPage() {
-  //const posts = await client.fetch<SanityDocument[]>(POSTS_QUERY, {}, options);
-
   return (
     <>
       <div className="prose p-2 md:p-5 mb-6 md:mb-0">
-        <h1 className="text-4xl font-bold mb-8">Experience</h1>
+        <h1 className="text-3xl font-bold mb-8">Experience</h1>
         <p>An experienced, proactive Full Stack .NET Developer and Solutions Architect with over 13 years of experience designing robust, maintainable web solutions. Trusted as a technical lead across high-profile projects, I specialise in architecting scalable enterprise-grade systems, both traditional and headless. I have deep .NET expertise across the full stack, including complex integration work, service-oriented architecture, and performance-critical backend systems. Passionate about performance, code quality, and innovation, with extensive experience in Next.js, React, Storyblok, BigCommerce, and Azure.</p>
       </div>
       
@@ -111,7 +97,7 @@ export default function IndexPage() {
           <li>Rebuilt core .NET components to support asynchronous messaging and high availability using Azure Functions and Service Bus</li>
           <li>Built the identity platform for HMV’s mobile app launch with a custom .NET Core SSO microservice</li>
           <li>Acted as technical lead and mentor for the dev team, responsible for sprint planning, code reviews, team guidance, and problem-solving</li>
-          <li>Conducted all technical interviews for Ridgeway’s development hires</li>
+          <li>Conducting technical interviews for Ridgeway’s development hires</li>
           <li>Created internal tools and automated scripts for laptop builds, streamlining developer onboarding and internal ops</li>
         </ul>
 
@@ -157,20 +143,4 @@ export default function IndexPage() {
       </Prose>
     </>
   )
-
-  /* return (
-    <>
-      <h1 className="text-4xl font-bold mb-8">Posts</h1>
-      <ul className="flex flex-col gap-y-4">
-        {posts.map((post) => (
-          <li className="hover:underline" key={post._id}>
-            <Link href={`/${post.slug.current}`}>
-              <h2 className="text-xl font-semibold">{post.title}</h2>
-              <p>{new Date(post.publishedAt).toLocaleDateString()}</p>
-            </Link>
-          </li>
-        ))}
-      </ul>
-    </>
-  ); */
 }

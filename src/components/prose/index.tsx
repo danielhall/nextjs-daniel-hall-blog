@@ -20,7 +20,7 @@ export default function Prose({ header, children, animate = true }: ProseProps) 
             exit={{ opacity: 0 }}
         >
             <motion.h2 
-                className="text-4xl font-bold sm:mt-0 mb-8"
+                className="text-2xl font-bold sm:mt-0 mb-8"
                 layout={animate ? "position" : false}
             >
                 {header}
