@@ -106,7 +106,7 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }: SidebarProps) => {
           </a>
           <a
             target="_blank"
-            href="https://bsky.app/profile/danieljohnh.bsky.social"
+            href="https://bsky.app/profile/danieljh.uk"
             className="inline-block flex items-top mt-4"
           >
             <TbBrandBluesky className="w-8 h-8 bg-background p-2 rounded" />
