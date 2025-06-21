@@ -14,7 +14,7 @@ export default function Prose({ header, children, animate = true }: ProseProps) 
 
     return (
         <motion.section 
-            className="prose p-2 md:p-5 mb-6 md:mb-0"
+            className="prose md:p-5 mb-6 md:mb-0"
             initial={initial}
             animate={animation}
             exit={{ opacity: 0 }}
