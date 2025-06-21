@@ -60,7 +60,7 @@ export default async function ArticlesPage({ searchParams }: PageProps) {
   const placeholdersNeeded = Math.max(MIN_GRID_ITEMS - posts.length, 0);
 
   return (
-    <Prose header="Articles">
+    <Prose title="Articles">
       {posts.length === 0 ? (
         <p className="text-foreground/60">No articles found.</p>
       ) : (

@@ -27,7 +27,7 @@ export default function ClientLayout({
         className={`relative flex-1 bg-background overflow-y-auto transition-all duration-300 ${
           sidebarOpen ? 'md:blur-none blur-sm' : ''
         }`}>
-        <div className="px-6 pt-8 sm:pt-10 lg:pt-3 pb-12">
+        <div className="px-6 pt-8 sm:pt-10 lg:pt-3 pb-24 md:pb-12">
           <Header sidebarOpen={sidebarOpen} setSidebarOpen={setSidebarOpen}/>
           <div className="container pt-2 md:pt-3 lg:pt-6 px-2">
             <Breadcrumb />

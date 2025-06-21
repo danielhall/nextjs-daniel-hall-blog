@@ -87,6 +87,18 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }: SidebarProps) => {
                 </span>
               </Link>
             </li>
+            <li>
+              <Link href="/contact">
+                <span
+                  onClick={handleNavClick}
+                  className={`block py-2 px-4 mt-1 rounded transition-colors duration-200 ${
+                    pathname === "/contact" ? "bg-background" : "hover:bg-background"
+                  }`}
+                >
+                  Contact
+                </span>
+              </Link>
+            </li>
           </ul>
         </nav>
         <div className="flex items-top px-8 space-x-2">

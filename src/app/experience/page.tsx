@@ -1,4 +1,4 @@
-import SkillCard from '@/components/skills';
+import SkillCard from '@/components/skillCard';
 import Prose from '@/components/prose';
 import { generateMetadata } from "@/utils/metadata";
 
@@ -12,7 +12,7 @@ export default function IndexPage() {
   return (
     <>
       <div className="prose p-2 md:p-5 mb-6 md:mb-0">
-        <h1 className="text-3xl font-bold mb-8">Experience</h1>
+        <h1 className="text-2xl font-bold mb-8">Experience</h1>
         <p>An experienced, proactive Full Stack .NET Developer and Solutions Architect with over 13 years of experience designing robust, maintainable web solutions. Trusted as a technical lead across high-profile projects, I specialise in architecting scalable enterprise-grade systems, both traditional and headless. I have deep .NET expertise across the full stack, including complex integration work, service-oriented architecture, and performance-critical backend systems. Passionate about performance, code quality, and innovation, with extensive experience in Next.js, React, Storyblok, BigCommerce, and Azure.</p>
       </div>
       
