@@ -11,7 +11,7 @@ export const metadata = generateMetadata({
 export default function IndexPage() {
   return (
     <>
-      <div className="prose p-2 md:p-5 mb-6 md:mb-0">
+      <div className="prose md:p-5 mb-6 md:mb-0">
         <h1 className="text-2xl font-bold mb-8">Get in Touch</h1>
         <p>If you&apos;d like to connect, collaborate, or just say hello, you can reach me via LinkedIn, X, or Bluesky.</p>
         <p>I&apos;m always happy to chat about solutions architecture, .NET, Next.js, open-source projects, or anything you&apos;ve seen on this site.</p>
