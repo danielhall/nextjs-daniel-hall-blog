@@ -37,7 +37,7 @@ export default function SocialCards() {
                         `}>
                             <TbBrandLinkedin className="w-10 h-10 bg-background p-2 rounded mb-5" />
                             <h3 className="text-2xl font-medium text-left pr-8">LinkedIn</h3>
-                            <p className="text-sm mt-1 mb-10 text-grey">Connect with me on LinkedIn and send me a message</p>
+                            <p className="text-sm mt-1 mb-10 text-grey">Connect with me on LinkedIn</p>
                             <ChevronDoubleRightIcon 
                                 className={`
                                     w-6 h-6
