@@ -1,4 +1,5 @@
-import SocialCards from '@/components/socialCards';
+import SocialCards from '@/components/contactCards';
+import FeaturedSocials from '@/components/featuredSocials';
 import Prose from '@/components/prose';
 import { generateMetadata } from "@/utils/metadata";
 
@@ -20,6 +21,7 @@ export default function IndexPage() {
       <Prose header="Let's Connect...">
           <SocialCards />
       </Prose>
+      <FeaturedSocials />
     </>
   )
 }

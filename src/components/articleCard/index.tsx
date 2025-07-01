@@ -1,8 +1,10 @@
 "use client";
 
+
 import Link from "next/link";
 import { type SanityDocument } from "next-sanity";
 import type { SanityBlock } from "@/app/articles/page";
+import { ChevronDoubleRightIcon } from "@heroicons/react/24/solid";
 
 export default function ArticleCard({ post }: { post: SanityDocument }) {
   return (
@@ -34,6 +36,16 @@ export default function ArticleCard({ post }: { post: SanityDocument }) {
             {post.body.length > 0 && "..."}
           </p>
         )}
+        <div className="flex flex-1 items-end justify-end mt-5">
+          <ChevronDoubleRightIcon 
+            className={`
+              w-6 h-6
+              transition-all duration-500 ease-out
+              group-hover:text-foreground/80 dark:group-hover:text-foreground/80
+              opacity-40 group-hover:opacity-80
+            `}
+          />
+        </div>
       </Link>
     </article>
   );

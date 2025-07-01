@@ -9,7 +9,7 @@ import {
   TbBrandBluesky
 } from "react-icons/tb";
 
-export default function SocialCards() {
+export default function ContactCards() {
     return (
         <div className="flex flex-wrap gap-4">
             <a 
