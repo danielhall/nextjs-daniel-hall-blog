@@ -11,7 +11,12 @@ const POST_QUERY = `*[_type == "post" && slug.current == $slug][0]{
   title,
   slug,
   publishedAt,
-  image,
+  image{
+    asset->{
+      _id,
+      url
+    }
+  },
   "estimatedReadingTime": round(length(pt::text(body)) / 5 / 180 ),
   body[]{
     ...,

@@ -7,7 +7,7 @@ export default function Loading() {
         {[...Array(6)].map((_, i) => (
           <article 
             key={i} 
-            className="bg-navigation/50 rounded-2xl overflow-hidden shadow-sm animate-pulse h-full flex flex-col"
+            className="bg-navigation rounded-2xl overflow-hidden shadow-sm animate-pulse h-full flex flex-col"
           >
             <div className="p-6 flex-1 flex flex-col">
               <div className="h-6 bg-gray-400/50 rounded w-3/4 mb-4"></div>

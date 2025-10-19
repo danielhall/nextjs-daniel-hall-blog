@@ -55,10 +55,10 @@ export default function ArticleContent({ post }: { post: SanityDocument }) {
           className="relative w-full aspect-[2/1] mb-8"
         >
           <Image
-            src={post.image.url}
+            src={post.image.asset.url}
             alt={post.title}
             fill
-            className="object-cover rounded-lg"
+            className="object-cover object-top rounded-lg"
           />
         </motion.div>
       )}
